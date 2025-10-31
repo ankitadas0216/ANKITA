@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita Das - Copywriter | Fitness & Manifestation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --accent-dark: #0369a1;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --glass: rgba(15, 23, 42, 0.6);
+            --gradient: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--primary);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text);
+            color: var(--primary);
+            border-color: var(--text);
+        }
+
+        /* HERO STATS */
+        .hero-stats {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-image::before {
+            left: 100%;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .portfolio-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .portfolio-category {
+            background: var(--gradient);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .portfolio-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-results {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-results h4 {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-results ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .portfolio-results li {
+            font-size: 0.875rem;
+            color: var(--text);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .portfolio-results li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .portfolio-tag {
+            background: var(--secondary);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* WRITINGS SECTION */
+        .writings {
+            padding: 8rem 0;
+            background: var(--secondary);
+        }
+
+        .writings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .writing-item {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .writing-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .writing-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .writing-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .writing-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .writing-link:hover {
+            text-decoration: underline;
+        }
+
+        /* MODAL STYLES */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: var(--secondary);
+            margin: 5% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .close {
+            color: var(--text);
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+
+        .close:hover {
+            color: var(--accent);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .modal p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 8rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 8rem 0;
+            background: var(--secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+            overflow: hidden;
+        }
+
+        .about-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 8rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 8rem 0 4rem;
+            background: var(--secondary);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .contact-form {
+            background: var(--glass);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://i.ibb.co/RGV4RcMt/Whats-App-Image-2025-04-29-at-10-21-16-AM.jpg" alt="Logo" style="width:100%; height:100%; object-fit: cover; border-radius:50%;">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Ankita Das</h1>
+                        <p>Copywriter</p>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Work</a></li>
+                        <li><a href="#writings">Writings</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="cta-header">Let's Talk</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Words That<br>Transform Lives</h1>
+                <p>Fitness & Manifestation Copywriter helping brands convert visitors into devoted customers through compelling storytelling</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="hero-stats">
+                    ⭐ 4.6/5 Rating | 10+ Happy Clients
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="fade-in">
+                    <h2>Hi, I'm Ankita Das</h2>
+                    <p>Siliguri-based copywriter specializing in fitness & manifestation. I create words that turn dreamers into doers.</p>
+                    <p>1+ years experience | 15+ clients | 100% satisfaction</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Work With Me</a>
+                </div>
+                <div class="about-image fade-in">
+                    <div class="about-avatar">
+                        <img src="https://i.ibb.co/RGV4RcMt/Whats-App-Image-2025-04-29-at-10-21-16-AM.jpg" alt="Ankita Das" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My Services</h2>
+                <p>Strategic copywriting solutions designed to scale your fitness & manifestation business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔥</div>
+                    <h3>Fitness Copy</h3>
+                    <p>Sales pages, emails, and ads that get clients signing up for your programs</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">✨</div>
+                    <h3>Manifestation Copy</h3>
+                    <p>Course launches and content that helps your audience manifest their dream life</p>
+                </div>
+                                <div class="service-card fade-in">
+                    <div class="service-icon">📧</div>
+                    <h3>Email Marketing</h3>
+                    <p>Sequences that nurture leads and drive consistent revenue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Projects</h2>
+                <p>Real results from brands I've helped scale</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://marketplace.canva.com/EAGsQfn2z8w/1/0/1280w/canva-black-%26-pink-minimalist-fitness-promotion-gym-fitness-instagram-post-b3H1115n5D4.jpg" alt="FitLife Project">
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">March 2025</span>
+                            <span class="portfolio-category">Fitness Launch</span>
+                        </div>
+                        <h3>FitLife 30-Day Challenge</h3>
+                        <p>Complete sales funnel that generated $25K in first launch</p>
+                        <div class="portfolio-results">
+                            <h4>Results</h4>
+                            <ul>
+                                <li>500+ sign-ups</li>
+                                <li>45% email open rate</li>
+                                <li>12% conversion</li>
+                            </ul>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Sales Funnel</span>
+                            <span class="portfolio-tag">Email</span>
+                            <span class="portfolio-tag">Landing Page</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image">
+                        <img src="https://www.lemon8-app.com/seo/image?item_id=7458057501687202346&index=0&sign=ff25b8dcf239943e5d0378d1e9219dfb" alt="Manifest Your Dreams">
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">Feb 2025</span>
+                            <span class="portfolio-category">Course Launch</span>
+                        </div>
+                        <h3>Manifest Your Dreams</h3>
+                        <p>Sold out manifestation course in 48 hours</p>
+                        <div class="portfolio-results">
+                            <h4>Results</h4>
+                            <ul>
+                                <li>Sold out in 48h</li>
+                                <li>$15K revenue</li>
+                                <li>300+ students</li>
+                            </ul>
+                        </div>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Course Sales</span>
+                            <span class="portfolio-tag">Email Sequence</span>
+                            <span class="portfolio-tag">Social Media</span>
+                        </div>
+                    </div>
+                </div>                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST WRITINGS -->
+    <section id="writings" class="writings">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Best Writings</h2>
+                <p>Highlights from my portfolio of compelling copy</p>
+            </div>
+            <div class="writings-grid">
+                <div class="writing-item fade-in">
+                    <h3>Money Hates You</h3>
+                    <p class="writing-excerpt">"Do you ever feel the same way?
+
+Like no matter how hard you try to attract abundance, it just never works?..."</p>
+                    <a class="writing-link" onclick="openModal(1)">Read Full Piece →</a>
+                </div>
+                <div class="writing-item fade-in">
+                    <h3>I Understand Your Frustration</h3>
+                    <p class="writing-excerpt">"Do you also get frustrated with yourself for not doing the workouts ?
+
+You try. you watch countless motivational videos on youtube.."</p>
+                    <a class="writing-link" onclick="openModal(2)">Read Full Piece →</a>
+                </div>
+                <div class="writing-item fade-in">
+                    <h3>Your Tomorrow Will Never Come</h3>
+                    <p class="writing-excerpt">"Are you done watching motivation videos and promising TOMORROW is the day?"</p>
+                    <a class="writing-link" onclick="openModal(3)">Read Full Piece →</a>
+                </div>
+                <div class="writing-item fade-in">
+                    <h3>I Understand Your Frustration</h3>
+                    <p class="writing-excerpt">"Do you get frustrated with yourself for not doing workouts? You're not alone."</p>
+                    <a class="writing-link" onclick="openModal(4)">Read Full Piece →</a>
+                </div>
+                <div class="writing-item fade-in">
+                    <h3>Tomorrow Isn't Coming</h3>
+                    <p class="writing-excerpt">"Doors close tonight. Decide: dream body or self-pity forever?"</p>
+                    <a class="writing-link" onclick="openModal(5)">Read Full Piece →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Clients Say</h2>
+                <p>Real feedback from satisfied partners</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Ankita's copy transformed our launch – $100K in sales!"</p>
+                    <p class="testimonial-author">- Sarah M., Fitness Coach</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Her manifestation content connected deeply with our audience."</p>
+                    <p class="testimonial-author">- Raj K., Coach</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Email open rates doubled thanks to Ankita's writing."</p>
+                    <p class="testimonial-author">- Lisa P., Brand Owner</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Professional, creative, and results-driven."</p>
+                    <p class="testimonial-author">- Mike J., App Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Let's Create Something Amazing</h2>
+                <p>Ready to transform your message? Send me a message</p>
+            </div>
+            <div class="contact-content">
+                <div class="fade-in">
+                    <h3>📧 ankitadas0216@gmail.com</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Siliguri, India • 12h response</p>
+                                   </div>
+                <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/xeorbkpp" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Type</label>
+                        <select name="project">
+                            <option value="fitness">Fitness Copywriting</option>
+                            <option value="manifestation">Manifestation Copy</option>
+                            <option value="brand">Brand Messaging</option>
+                            <option value="email">Email Marketing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="4" required placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ankita Das</h3>
+                    <p>Copywriter helping fitness & manifestation brands scale through words that convert</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#">Fitness Copy</a>
+                    <a href="#">Manifestation Copy</a>
+                    <a href="#">Brand Messaging</a>
+                    <a href="#">Email Marketing</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ankita-das-358499390" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/ankita.copy0216?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/yourusername" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/ankita.das.577323" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/9332834547" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+           <p style="text-align: center; color: var(--text-muted); margin-top: 2rem; font-size: 0.85rem;">
+    <a href="mailto:ankitadas0216@gmail.com" style="color: var(--accent); text-decoration: none;">ankitadas0216@gmail.com</a>
+</p>        </div>
+    </footer>
+
+    <!-- MODAL 1: Money Hates You -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Money Hates You</h2>
+        <p><strong>Result:</strong> 2.3K clicks • 38% open rate • 1.2K signups</p>
+        <div class="modal-body">
+            <p><strong>Subject:</strong> Money Hates You</p>
+            <p>Hey {firstname},</p>
+            <p>Do you ever feel the same way?</p>
+            <p>Like no matter how hard you try to attract abundance, it just never works?</p>
+            <p>I've been there too. I did all the rituals, money affirmations, prayed for sudden luck</p>
+            <p>And of course as always it never actually happened for me either. Haha</p>
+            <p>I used to think that something was surely wrong with me, and in my subconscious mind it was stuck that no matter how hard I tried nothing would work out for me.</p>
+            <p>But then I realized… I wasn't the only one.</p>
+            <p>This struggle is epidemic, especially among women.</p>
+            <p>Money is not just paper; it’s <strong>FREEDOM</strong>.</p>
+            <p>It’s the key to opening doors.<br>
+            Doors to choices,<br>
+            Where you live,<br>
+            How you spend your time,<br>
+            Whom you help,<br>
+            And what dreams you finally get to chase,</p>
+            <p>And when manifestation keeps failing,<br>
+            something insidious happens.</p>
+            <p>You give up,<br>
+            And start thinking that <em>money hates you</em>.</p>
+            <p>And that thought is the wall between you and abundance.</p>
+            <p>But what if I told you that the wall can crumble in just 90 minutes?</p>
+            <p>That's why I have created a <strong>FREE LIVE ONLINE WORKSHOP</strong>, designed to help you :-</p>
+            <p>💫 Demolish that mental block that have been sabotaging your abundance for years.<br>
+            💫 Rewire your subconscious mind so you can stop being your worst financial enemy.<br>
+            💫 Align yourself with universal flow instead of swimming upstream against it.<br>
+            💫 Transform from “ money hates me “ to “ money finds me effortlessly “.<br>
+            💫 Step into the magnetic version of yourself , that abundance can't resist.</p>
+            <p>I'm calling it : <strong>The Magnetic Money Mindset</strong>.</p>
+            <p>This is your 90 -minute portal to a completely different financial reality.</p>
+            <p>If you don't want to let the wall you've built, keep you trapped for one more day,</p>
+            <p>then <strong>click the link below and claim your FREE spot before they are gone</strong>.</p>
+            <p>See you inside<br>
+            <em>Your manifestation coach.</em></p>
+        </div>
+    </div>
+    </div>
+
+   <!-- MODAL 2: I Understand Your Frustration -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>I Understand Your Frustration</h2>
+        <p><strong>Result:</strong> 1.8K opens • 42% CTR • 980 signups</p>
+        <div class="modal-body">
+            <p><strong>Subject:</strong> I understand your frustration</p>
+            <p>Hey {firstname},</p>
+            <p>Do you also get frustrated with yourself for not doing the workouts ?</p>
+            <p>You try. you watch countless motivational videos on youtube.</p>
+            <p>You feel guilty for not doing anything.</p>
+            <p>You feel <strong>FRUSTRATED</strong></p>
+            <p>But when it comes to workouts, your mind becomes incredibly creative at finding reasons not to.</p>
+            <p>And this cycle continues:</p>
+            <p>Motivation > promise of starting tomorrow > making a new excuse > feeling guilty.</p>
+            <p>It’s not about lacking motivation. It’s about lacking consistency.</p>
+            <p>And trust me, this is very common,</p>
+            <p>When a task feels stressful or boring, our brain hits the panic button and activates the <strong>AVOIDANCE BEHAVIOR</strong>.</p>
+            <p>And it’s not laziness, it’s just our brain trying to avoid short-term discomfort</p>
+            <p>To fix this, start so small it feels impossible to fail. Even 5 minutes of workout counts .</p>
+            <p>Once you start. Momentum builds.</p>
+            <p>It’s just about learning how to outsmart your brain.</p>
+            <p>And that's exactly why I have created a <strong>21-Day Glow-Up Challenge</strong> .</p>
+            <p>Enroll now before spots fill.</p>
+            <p>“Remember every day you wait, your dream body waits too”</p>
+            <p>See you soon,<br>
+            <em>Your Fitness Coach .</em></p>
+        </div>
+    </div>
+</div>
+    <!-- MODAL 3: Your Tomorrow Will Never Come -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your Tomorrow Will Never Come</h2>
+            <p>Hey firstname,<br><br>Are you done watching that motivation video on YouTube?<br>You get super motivated for 10 minutes and swear that TOMORROW is the day.<br><br>Be honest, how many times have you promised yourself that?<br><br>But again here the loop of 'I'll start workout tomorrow' continues.<br><br>And like always that TOMORROW ghosts you, or should I say that you ghost it!<br><br>Your fitness journey doesn't need a perfect start, it needs a decision that sticks.<br>You don't need more motivation, all you need is momentum.<br><br>That's exactly what the 21-Day Glow-Up Challenge is built for.<br><br>Simple workouts, Zero pressure, And real results.<br>It's not about being perfect, it's about being consistent.<br><br><strong>👉 Join the challenge now</strong><br>Because tomorrow isn't coming but your results can.<br><br>Your fitness coach.</p>
+        </div>
+    </div>
+
+    <!-- MODAL 4: I Understand Your Frustration -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>I Understand Your Frustration</h2>
+            <p>Hey firstname,<br><br>Do you also get frustrated with yourself for not doing the workouts?<br><br>You try. You watch countless motivational videos on YouTube. You feel guilty for not doing anything. You feel <strong>FRUSTRATED</strong>.<br><br>But when it comes to workouts, your mind becomes incredibly creative at finding reasons not to.<br><br>And this cycle continues:<br>Motivation > promise of starting tomorrow > making a new excuse > feeling guilty.<br><br>It's not about lacking motivation. It's about lacking consistency.<br><br>And trust me, this is very common.<br><br>When a task feels stressful or boring, our brain hits the panic button and activates the AVOIDANCE BEHAVIOR.<br><br>And it's not laziness, it's just our brain trying to avoid short-term discomfort.<br><br>To fix this, start so small it feels impossible to fail. Even 5 minutes of workout counts.<br><br>Once you start. Momentum builds.<br><br>It's just about learning how to outsmart your brain.<br><br>And that's exactly why I have created a <strong>21-Day Glow-Up Challenge</strong>.<br><br><strong>👉 Enroll now before spots fill.</strong><br>"Remember every day you wait, your dream body waits too"<br><br>See you soon,<br><strong>Your Fitness Coach</strong>.</p>
+        </div>
+    </div>
+
+    <!-- MODAL 5: Tomorrow Isn't Coming -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Tomorrow Isn't Coming - Doors Close Tonight</h2>
+            <p>Hey firstname,<br><br>You have to decide what you want.<br><br>Whether you want to achieve your desired body or you want to be rolled up in self-pity forever.<br><br>And if this year you want change in your life, and body then don't wait.<br><br>The 21-Day Glow-Up Challenge is specially designed for you to:<br><br>👉 Build consistency<br>👉 Feel confident in your body again<br>👉 And finally stop ghosting your goals.<br><br>I've done my part, you have to do yours.<br><br>People who joined the last round are already seeing results and now it's your time.<br><br>After midnight, it's gone.<br><br><strong>👊 Book your spot now and click on this link.</strong><br><br>See you on the other side<br><strong>Your fitness coach</strong>.</p>
+        </div>
+    </div>
+
+    <script>
+        // Navigation active state
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function() {
+                document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+
+        // MODAL FUNCTIONS
+        function openModal(id) {
+            document.getElementById('modal' + id).style.display = 'block';
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
